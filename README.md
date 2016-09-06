@@ -15,6 +15,8 @@ With focus on the .NET-Stack, at least the following technologies should be adde
 * ASP.NET WebApi
 * ASP.NET SignalR
 
+See more details on the official course website: http://web.fhnw.ch/plattformen/dnead
+
 ## Contribution
 The following products / tools are needed to contribute / fork.
 
