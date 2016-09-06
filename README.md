@@ -1,6 +1,6 @@
 # dotnetbay - A .NET Auction Solution 
-Master: [![Build status](https://ci.appveyor.com/api/projects/status/l1ook550stg4kxtg/branch/master?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs16/branch/master)
-Project: [![Build status](https://ci.appveyor.com/api/projects/status/l1ook550stg4kxtg?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs16)
+Master: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7spaapfx/branch/master?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs16/branch/master)
+Project: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7spaapfx?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs16)
 
 A bootstrap solution to build your own basic auction portal.
 
@@ -21,7 +21,6 @@ The following products / tools are needed to contribute / fork.
 **For Development**
 * Microsoft Visual Studio 2015 (at least Community Version). [https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx "https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx")
 * JetBrains ReSharper (optional). [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/ "https://www.jetbrains.com/student/")
-
 
 **For Pleasure**
 * SourceTree [http://www.sourcetreeapp.com/](http://www.sourcetreeapp.com/ "http://www.sourcetreeapp.com/")
