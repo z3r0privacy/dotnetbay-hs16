@@ -20,11 +20,11 @@ The following products / tools are needed to contribute / fork.
 
 **For Development**
 * Microsoft Visual Studio 2015 (at least Community Version). [https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx "https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx")
-* JetBrains ReSharper (optional). [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/ "https://www.jetbrains.com/student/")
+* JetBrains ReSharper [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/ "https://www.jetbrains.com/student/")
 
 **For Pleasure**
 * SourceTree [http://www.sourcetreeapp.com/](http://www.sourcetreeapp.com/ "http://www.sourcetreeapp.com/")
-* NCrunch [http://www.ncrunch.net/](http://www.ncrunch.net/ http://www.ncrunch.net/)
+* NCrunch [http://www.ncrunch.net/](http://www.ncrunch.net/)
 
 ## Authors
 * Michael Schnyder
