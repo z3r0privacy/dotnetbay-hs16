@@ -14,7 +14,6 @@ namespace DotNetBay.Test.Storage
     {
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException(typeof(FileStorageException))]
         public void GivenEmptyRepo_AddAuctionAndMemberFromOtherInstance_ShouldRaiseException()
         {
             var createdAuction = CreateAnAuction();
@@ -31,7 +30,7 @@ namespace DotNetBay.Test.Storage
                 initRepo.SaveChanges();
 
                 var testRepo = factory.CreateMainRepository();
-                testRepo.Add(createdAuction);
+                Assert.Throws<FileStorageException>(() => testRepo.Add(createdAuction));
             }
         }
 

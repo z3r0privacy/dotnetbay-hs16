@@ -108,7 +108,6 @@ namespace DotNetBay.Test.Core
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException(typeof(AuctionStateException))]
         public void Auction_GetsOlderButHigherBid_FailsWithException()
         {
             var repo = new InMemoryMainRepository();
@@ -123,7 +122,8 @@ namespace DotNetBay.Test.Core
             repo.Add(bidder2);
             repo.Add(new Bid() { ReceivedOnUtc = DateTime.UtcNow.AddMinutes(-10), Bidder = bidder2, Amount = 70, Auction = auction });
 
-            auctioneer.DoAllWork();
+
+            Assert.Throws<AuctionStateException>(() => auctioneer.DoAllWork());
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]

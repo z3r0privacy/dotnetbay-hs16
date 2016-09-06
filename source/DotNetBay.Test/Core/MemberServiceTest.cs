@@ -20,8 +20,10 @@ namespace DotNetBay.Test.Core
             var currentMember = service.GetCurrentMember();
 
             Assert.NotNull(currentMember);
-            Assert.IsNotNullOrEmpty(currentMember.DisplayName);
-            Assert.IsNotNullOrEmpty(currentMember.EMail);
+            Assert.IsNotNull(currentMember.DisplayName);
+            Assert.IsNotEmpty(currentMember.DisplayName);
+            Assert.IsNotNull(currentMember.EMail);
+            Assert.IsNotEmpty(currentMember.EMail);
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]

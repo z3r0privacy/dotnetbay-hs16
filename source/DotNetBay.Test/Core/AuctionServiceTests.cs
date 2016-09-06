@@ -62,7 +62,6 @@ namespace DotNetBay.Test.Core
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException(typeof(ArgumentException))]
         public void WhenAddingAnAuction_WithUnknownMember_RaisesException()
         {
             var auction = CreateGeneratedAuction();
@@ -72,13 +71,12 @@ namespace DotNetBay.Test.Core
             var memberService = new SimpleMemberService(repo);
             var service = new AuctionService(repo, memberService);
 
-            service.Save(auction);
+            Assert.Throws<ArgumentException>(() => service.Save(auction));
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException(typeof(AuctionStateException))]
         public void PlacingABid_AuctionHasNotYetStarted_RaisesException()
         {
             var repo = new InMemoryMainRepository();
@@ -91,13 +89,12 @@ namespace DotNetBay.Test.Core
             auction.StartDateTimeUtc = DateTime.UtcNow.AddDays(1);
             service.Save(auction);
 
-            service.PlaceBid(auction, 100);
+            Assert.Throws<AuctionStateException>(() => service.PlaceBid(auction, 100));
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "These are tests, thats fine!")]
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException(typeof(AuctionStateException))]
         public void PlacingABid_AuctionHasExpired_RaisesException()
         {
             var repo = new InMemoryMainRepository();
@@ -112,7 +109,7 @@ namespace DotNetBay.Test.Core
 
             repo.Add(auction);
 
-            service.PlaceBid(auction, 100);
+            Assert.Throws<AuctionStateException>(() => service.PlaceBid(auction, 100));
         }
 
         private static Auction CreateGeneratedAuction()

@@ -5,6 +5,7 @@ using System.Linq;
 using DotNetBay.Data.Entity;
 using DotNetBay.Interfaces;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 
 namespace DotNetBay.Test.Storage
 {
@@ -332,7 +333,6 @@ namespace DotNetBay.Test.Storage
 
         [SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Justification = "These are tests, thats fine!")]
         [TestCase]
-        [ExpectedException]
         public void GivenEmptyRepo_AddMemberWithAuctionsFromOtherInstance_ShouldRaiseException()
         {
             var createdAuction = CreateAnAuction();
@@ -352,8 +352,7 @@ namespace DotNetBay.Test.Storage
                 initRepo.SaveChanges();
 
                 var testSore = factory.CreateMainRepository();
-                testSore.Add(otherMember);
-                testSore.SaveChanges();
+                Assert.Throws(new AssignableToConstraint(typeof(Exception)), () => testSore.Add(otherMember));
             }
         }
 
