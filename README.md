@@ -30,7 +30,7 @@ The following products / tools are needed to contribute / fork.
 
 ## Authors
 * Michael Schnyder
-* Martin Kropp
+* Martin Kropp, martin.kropp@fhnw.ch
 
 ## License
 Licensed under the MIT License
