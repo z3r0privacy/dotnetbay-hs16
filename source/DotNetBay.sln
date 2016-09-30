@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5F834335-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7210F83D-4D9F-4AA7-BBA4-69BA18FE8F79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.WPF", "DotNetBay.WPF\DotNetBay.WPF.csproj", "{37FA60E3-3B54-4D60-B116-E58FFFBFA835}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FA60E3-3B54-4D60-B116-E58FFFBFA835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FA60E3-3B54-4D60-B116-E58FFFBFA835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FA60E3-3B54-4D60-B116-E58FFFBFA835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FA60E3-3B54-4D60-B116-E58FFFBFA835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

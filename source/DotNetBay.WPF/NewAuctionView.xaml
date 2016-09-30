@@ -1,0 +1,61 @@
+﻿<Window x:Class="DotNetBay.WPF.NewAuctionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotNetBay.WPF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="SellView" Height="350" Width="400"
+        Background="#fafafa">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            
+            <TextBlock Grid.Row="0" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" Text="Add new Auction" />
+            <TextBlock Grid.Row="1" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Title" />
+            <TextBlock Grid.Row="2" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Description" />
+            <TextBlock Grid.Row="3" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Start Price" />
+            <TextBlock Grid.Row="4" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Start" />
+            <TextBlock Grid.Row="5" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="End" />
+            <TextBlock Grid.Row="6" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Image" />
+            
+            <TextBox Grid.Row="1" Grid.Column="1" />
+            <TextBox Grid.Row="2" Grid.Column="1" Height="60"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" />
+            <xctk:DateTimePicker Grid.Row="4" Grid.Column="1"></xctk:DateTimePicker>
+            <xctk:DateTimePicker Grid.Row="5" Grid.Column="1"></xctk:DateTimePicker>
+            <Grid Grid.Row="6" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <TextBox Name="ImgPath" Grid.Column="0"></TextBox>
+                <Button Name="SearchImageButton" Grid.Column="1" Click="SearchImageButton_Click">...</Button>
+            </Grid>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="AddButton" Margin="0,0,10,0">Add Auction</Button>
+            <Button Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

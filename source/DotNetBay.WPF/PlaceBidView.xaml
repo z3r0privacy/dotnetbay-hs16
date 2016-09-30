@@ -1,0 +1,57 @@
+﻿<Window x:Class="DotNetBay.WPF.PlaceBidView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotNetBay.WPF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        d:DataContext="{d:DesignInstance Type=local:PlaceBidView}"
+        mc:Ignorable="d"
+        Title="Bid View" Height="300" Width="300"
+        Background="#fafafa">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="100" Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Row="0" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" Text="Place Bid For Auction" />
+            <TextBlock Grid.Row="1" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Title" />
+            <!-- <TextBlock Grid.Row="2" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Description" /> -->
+            <TextBlock Grid.Row="3" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Description" />
+            <TextBlock Grid.Row="4" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Start Price" />
+            <TextBlock Grid.Row="5" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Current Price" />
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Auction.Title}" Style="{StaticResource AuctionEditTextBlock}" />
+            <Image Source="{Binding Auction.Image}" Grid.Column="1" Grid.Row="2" MinHeight="20"></Image>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Auction.Description}" Style="{StaticResource AuctionEditTextBlock}" />
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Auction.StartPrice}" Style="{StaticResource AuctionEditTextBlock}" />
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Auction.CurrentPrice}" Style="{StaticResource AuctionEditTextBlock}" />
+            
+            
+            <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,20,0,20" Text="Your Bid" FontWeight="Bold" FontSize="14"></TextBlock>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,20,0,20" FontSize="14"></TextBox>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="AddButton" Margin="0,0,10,0">Add Auction</Button>
+            <Button Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
