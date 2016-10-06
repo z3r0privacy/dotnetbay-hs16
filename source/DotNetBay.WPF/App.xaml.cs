@@ -20,6 +20,8 @@ namespace DotNetBay.WPF
     {
         public IMainRepository MainRepository { get; }
         public IAuctionRunner AuctionRunner { get; }
+        public IMemberService MemberService { get; }
+        public IAuctionService AuctionService { get; }
 
         public App()
         {
@@ -27,12 +29,12 @@ namespace DotNetBay.WPF
             AuctionRunner = new AuctionRunner(MainRepository);
             AuctionRunner.Start();
 
-            var memberService = new SimpleMemberService(this.MainRepository);
-            var service = new AuctionService(this.MainRepository, memberService);
-            if (!service.GetAll().Any())
+            MemberService = new SimpleMemberService(this.MainRepository);
+            AuctionService = new AuctionService(this.MainRepository, MemberService);
+            if (!AuctionService.GetAll().Any())
             {
-                var me = memberService.GetCurrentMember();
-                service.Save(new Auction
+                var me = MemberService.GetCurrentMember();
+                AuctionService.Save(new Auction
                 {
                     Title = "My First Auction", StartDateTimeUtc = DateTime.UtcNow.AddSeconds(10), EndDateTimeUtc = DateTime.UtcNow.AddDays(14), StartPrice = 72, Seller = me
                 });

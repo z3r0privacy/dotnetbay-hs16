@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         d:DataContext="{d:DesignInstance Type=local:PlaceBidView}"
         mc:Ignorable="d"
-        Title="Bid View" Height="300" Width="300"
+        Title="Bid View" Height="430" Width="401"
         Background="#fafafa">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -39,18 +39,18 @@
             <TextBlock Grid.Row="5" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Current Price" />
 
             <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Auction.Title}" Style="{StaticResource AuctionEditTextBlock}" />
-            <Image Source="{Binding Auction.Image}" Grid.Column="1" Grid.Row="2" MinHeight="20"></Image>
-            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Auction.Description}" Style="{StaticResource AuctionEditTextBlock}" />
+            <Image Source="{Binding Auction.Image}" Grid.Column="1" Grid.Row="2" MinHeight="20" MaxHeight="200" MaxWidth="300"></Image>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Auction.Description}" Style="{StaticResource AuctionEditTextBlock}" TextWrapping="Wrap" MaxHeight="50" />
             <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Auction.StartPrice}" Style="{StaticResource AuctionEditTextBlock}" />
             <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Auction.CurrentPrice}" Style="{StaticResource AuctionEditTextBlock}" />
-            
-            
+
+
             <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,20,0,20" Text="Your Bid" FontWeight="Bold" FontSize="14"></TextBlock>
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,20,0,20" FontSize="14"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,20,0,20" FontSize="14" Name="dblBid"></TextBox>
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="AddButton" Margin="0,0,10,0">Add Auction</Button>
+            <Button Name="AddButton" Margin="0,0,10,0" Click="AddButton_Click">Add Auction</Button>
             <Button Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
         </StackPanel>
     </Grid>

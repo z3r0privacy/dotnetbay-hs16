@@ -38,23 +38,23 @@
             <TextBlock Grid.Row="5" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="End" />
             <TextBlock Grid.Row="6" Style="{StaticResource AuctionEditTextBlock}" Grid.Column="0" Text="Image" />
             
-            <TextBox Grid.Row="1" Grid.Column="1" />
-            <TextBox Grid.Row="2" Grid.Column="1" Height="60"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" />
-            <xctk:DateTimePicker Grid.Row="4" Grid.Column="1"></xctk:DateTimePicker>
-            <xctk:DateTimePicker Grid.Row="5" Grid.Column="1"></xctk:DateTimePicker>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="txtTitle" />
+            <TextBox Grid.Row="2" Grid.Column="1" Height="60" Name="txtDesc"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="dblStartPrice" />
+            <xctk:DateTimePicker Grid.Row="4" Grid.Column="1" Name="dateStart"></xctk:DateTimePicker>
+            <xctk:DateTimePicker Grid.Row="5" Grid.Column="1" Name="dateEnd"></xctk:DateTimePicker>
             <Grid Grid.Row="6" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="20" />
                 </Grid.ColumnDefinitions>
-                <TextBox Name="ImgPath" Grid.Column="0"></TextBox>
+                <TextBox Name="txtImgPath" Grid.Column="0"></TextBox>
                 <Button Name="SearchImageButton" Grid.Column="1" Click="SearchImageButton_Click">...</Button>
             </Grid>
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="AddButton" Margin="0,0,10,0">Add Auction</Button>
+            <Button Name="AddButton" Margin="0,0,10,0" Click="AddButton_Click">Add Auction</Button>
             <Button Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
         </StackPanel>
     </Grid>

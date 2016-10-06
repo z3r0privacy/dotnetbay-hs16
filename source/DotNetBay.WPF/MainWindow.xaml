@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetBay.WPF"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         d:DataContext="{d:DesignInstance Type=local:MainWindow}"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="1000">
+    
+    <Window.Resources>
+        <local:BooleanToStatusTextConverter x:Key="booleanToStatusTextConverter" />
+        <local:BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+        <sys:String x:Key="strDateFormatString">{0:dd.MM.yyyy HH:mm}</sys:String>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -22,25 +30,27 @@
                         <DataTemplate>
                             <StackPanel>
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />
-                                <Image Source="{Binding Icon}" />
+                                <Image Source="{Binding Image}" MaxHeight="100" MaxWidth="120" />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Status" />
-                <DataGridTextColumn Header="Start Price"  Binding="{Binding Path=StartPrice}" />
-                <DataGridTextColumn Header="Current Price"  Binding="{Binding Path=CurrentPrice}" />
-                <DataGridTextColumn Header="Bids"  Binding="{Binding Path=Bids}" />
-                <DataGridTextColumn Header="Starts"  Binding="{Binding Path=StartDateTimeUtc}" />
-                <DataGridTextColumn Header="Ends"  Binding="{Binding Path=EndDateTimeUtc}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Path=IsRunning, Converter={StaticResource booleanToStatusTextConverter}}" />
+                <DataGridTextColumn Header="Start Price"  Binding="{Binding Path=StartPrice, ConverterCulture=DE-CH, StringFormat={}{0:C}}" />
+                <DataGridTextColumn Header="Current Price"  Binding="{Binding Path=CurrentPrice, ConverterCulture=DE-CH, StringFormat={}{0:C}}" />
+                <DataGridTextColumn Header="Bids"  Binding="{Binding Path=Bids.Count}" />
+                <DataGridTextColumn Header="Starts"  Binding="{Binding Path=StartDateTimeUtc, StringFormat={StaticResource strDateFormatString}}" />
+                <DataGridTextColumn Header="Ends"  Binding="{Binding Path=EndDateTimeUtc, StringFormat={StaticResource strDateFormatString}}" />
                 <DataGridTextColumn Header="Seller"  Binding="{Binding Path=Seller.DisplayName}" />
                 <DataGridTextColumn Header="Current Winner"  Binding="{Binding Path=ActiveBid.Bidder.DisplayName}" />
-                <DataGridTextColumn Header="Closed"  Binding="{Binding Path=CloseDateTimeUtc}" />
+                <DataGridTextColumn Header="Closed"  Binding="{Binding Path=CloseDateTimeUtc, StringFormat={StaticResource strDateFormatString}}" />
                 <DataGridTextColumn Header="Winner"  Binding="{Binding Path=Winner.DisplayName}" />
                 <DataGridTemplateColumn Header="Place Bid" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Background="Green" Name="PlaceBidButton"  Click="PlaceBidButton_OnClick">Place</Button>
+                            <Button Background="Green" Name="PlaceBidButton"  Click="PlaceBidButton_OnClick"
+                                    Visibility="{Binding IsRunning, Converter={StaticResource booleanToVisibilityConverter}}">
+                                Place</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -33,5 +33,37 @@ namespace DotNetBay.WPF
         {
             this.Close();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            double bid;
+            if (double.TryParse(dblBid.Text, out bid))
+            {
+                if (bid < Auction.StartPrice)
+                {
+                    ShowError("Bid must be higher than or eqaul to starting price");
+                    return;
+                }
+                else if (Auction.ActiveBid != null && Auction.ActiveBid.Amount >= bid)
+                {
+                    ShowError("Bid must be higher than the currently highest bid");
+                    return;
+                }
+            }
+            else
+            {
+                ShowError("Not a valid number");
+                return;
+            }
+
+            (Application.Current as App).AuctionService.PlaceBid(Auction, bid);
+            
+            this.Close();
+        }
+
+        private void ShowError(string msg)
+        {
+            MessageBox.Show(this, msg, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
