@@ -52,6 +52,8 @@ namespace DotNetBay.WPF
         private void NewAuctionButton_Click(object sender, RoutedEventArgs e)
         {
             new NewAuctionView().ShowDialog();
+
+            AuctionsDataGrid.Items.Refresh();
         }
 
         private void PlaceBidButton_OnClick(object sender, RoutedEventArgs e)
