@@ -3,8 +3,8 @@ Master: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7sp
 Project: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7spaapfx?svg=true)](https://ci.appveyor.com/project/krma/dotnetbay-hs16)
 
 ##State of Implementation
-WPF GUI Solution
-Ths solution contains the sample implementation for lab02 WPF GUI
+WPF Complete Solution
+Ths solution contains the sample implementation for lab03 WPF GUI & XAML
 
 
 See more details on the official course website: http://web.fhnw.ch/plattformen/dnead
