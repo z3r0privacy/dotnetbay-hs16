@@ -68,6 +68,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetBay.Health.Owin\DotNetBay.Health.Owin.csproj">
+      <Project>{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}</Project>
+      <Name>DotNetBay.Health.Owin</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
