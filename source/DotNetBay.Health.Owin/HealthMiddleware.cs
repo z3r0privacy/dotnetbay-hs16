@@ -25,8 +25,6 @@ namespace DotNetBay.Health.Owin
             await context.Response.WriteAsync("<h2>Data Health</h2>");
             await context.Response.WriteAsync("Number of Auctions: " + this.repository.GetAuctions().Count());
 
-            await context.Response.WriteAsync("");
-
             await this.Next.Invoke(context);
         }
     }
