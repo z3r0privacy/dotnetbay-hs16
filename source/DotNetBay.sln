@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.WebApp", "DotNetB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.SelfHost", "DotNetBay.SelfHost\DotNetBay.SelfHost.csproj", "{BF2DC7C0-DE64-4938-9659-119BAC7006ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Health.Owin", "DotNetBay.Health.Owin\DotNetBay.Health.Owin.csproj", "{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{BF2DC7C0-DE64-4938-9659-119BAC7006ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2DC7C0-DE64-4938-9659-119BAC7006ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2DC7C0-DE64-4938-9659-119BAC7006ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,5 +96,6 @@ Global
 		{95C884A6-9236-4294-9298-1DF51F21B2E0} = {5F834335-7C81-448A-BD47-A6DFA7EA150B}
 		{1B9B23DE-251F-4D24-8311-E5393FB27D5A} = {FDE7D9C2-F524-42CE-ACDF-0FDD03140441}
 		{BF2DC7C0-DE64-4938-9659-119BAC7006ED} = {FDE7D9C2-F524-42CE-ACDF-0FDD03140441}
+		{AF1CB4AD-4DFB-4105-B7E1-EDC2FBD1284D} = {5F834335-7C81-448A-BD47-A6DFA7EA150B}
 	EndGlobalSection
 EndGlobal
