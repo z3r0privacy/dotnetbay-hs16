@@ -23,11 +23,15 @@ namespace DotNetBay.Health.Owin
             await Next.Invoke(context);
 
             context.Response.Write(
+                $"<html><head>" + 
+                $"<title>DotNetBay - Health</title>" + 
+                $"</head><body>" +
                 $"<h1>Health Information</h1>" +
                 $"<h2>Database Connection String</h2>" +
                 $"{data.Database.Connection.ConnectionString}" +
                 $"<h2>Data Health</h2>" +
-                $"Number of Auctions: {data.GetAuctions().ToList().Count}"
+                $"Number of Auctions: {data.GetAuctions().ToList().Count}" +
+                $"</body></html>"
                 );
         }
     }
