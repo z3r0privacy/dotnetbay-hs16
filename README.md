@@ -1,6 +1,6 @@
 # dotnetbay - A .NET Auction Bootstrapper 
-Master: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7spaapfx/branch/master?svg=true)](https://ci.appveyor.com/project/krma/dotnetbay-hs16/branch/master)
-Project: [![Build status](https://ci.appveyor.com/api/projects/status/icb7nq9u7spaapfx?svg=true)](https://ci.appveyor.com/project/krma/dotnetbay-hs16)
+Master: [![Build status](https://ci.appveyor.com/api/projects/status/gx76my8mx8avd5id/branch/master?svg=true)](https://ci.appveyor.com/project/krma/dotnetbay-hs16/branch/master)
+Project: [![Build status](https://ci.appveyor.com/api/projects/status/gx76my8mx8avd5id?svg=true)](https://ci.appveyor.com/project/krma/dotnetbay-hs16)
 
 ##State of Implementation
 ASP.NET MVC Solution
