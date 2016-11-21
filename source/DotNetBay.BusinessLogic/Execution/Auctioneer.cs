@@ -98,7 +98,7 @@ namespace DotNetBay.Core.Execution
         private void ProcessOpenBids()
         {
             // Process all auctions with open bids
-            var openAuctions = this.repository.GetAuctions().Where(a => a.Bids.Any(b => b.Accepted == null));
+            var openAuctions = this.repository.GetAuctions().Where(a => a.Bids.Any(b => b.Accepted == null)).ToList();
 
             var processedBids = false;
 
