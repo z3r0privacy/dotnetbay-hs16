@@ -6,6 +6,8 @@ using Owin;
 using System.Web;
 using System.Web.Http;
 using System.Reflection;
+using System.Net.Http.Formatting;
+using Newtonsoft.Json.Serialization;
 
 [assembly: OwinStartup(typeof(DotNetBay.SelfHost.Startup))]
 
@@ -23,6 +25,12 @@ namespace DotNetBay.SelfHost
 
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
+
+            var format = new JsonMediaTypeFormatter();
+            //format.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+            format.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.Clear();
+            config.Formatters.Add(format);
 
             app.UseWebApi(config);
 

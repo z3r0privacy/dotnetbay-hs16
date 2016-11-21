@@ -172,6 +172,10 @@
       <Project>{17745e6c-337c-44bd-9c50-5f1d45ceada5}</Project>
       <Name>DotNetBay.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.WebApi\DotNetBay.WebApi.csproj">
+      <Project>{85A5BB83-8039-4863-985D-EA434A2E0761}</Project>
+      <Name>DotNetBay.WebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

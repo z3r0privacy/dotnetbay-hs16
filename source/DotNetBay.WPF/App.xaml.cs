@@ -9,6 +9,7 @@ using DotNetBay.Data.EF;
 using DotNetBay.Data.EF.Migrations;
 using DotNetBay.Data.Entity;
 using DotNetBay.Interfaces;
+using DotNetBay.WebApi.Services;
 
 namespace DotNetBay.WPF
 {
@@ -42,7 +43,8 @@ namespace DotNetBay.WPF
         private void FillSampleData()
         {
             var memberService = new SimpleMemberService(this.MainRepository);
-            var service = new AuctionService(this.MainRepository, memberService);
+            //            var service = new AuctionService(this.MainRepository, memberService);
+            var service = new RemoteAuctionService();
 
             if (!service.GetAll().Any())
             {

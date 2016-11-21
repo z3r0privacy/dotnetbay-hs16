@@ -44,6 +44,7 @@ namespace DotNetBay.SelfHost
                 Console.Write("Press Enter to quit.");
                 Console.ReadLine();
                 WebApi.AuctionController.AuctionRunner.Stop();
+                WebApi.AuctionController.repo.Database.Connection.Close();
            }
 
         }

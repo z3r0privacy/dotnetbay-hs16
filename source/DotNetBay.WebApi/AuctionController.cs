@@ -16,13 +16,14 @@ namespace DotNetBay.WebApi
     public class AuctionController : ApiController
     {
         //private static ;
-        public static IAuctionRunner AuctionRunner;
+        public static EFMainRepository repo { get; private set; }
+        public static IAuctionRunner AuctionRunner { get; private set; }
         private static IMemberService MemberService;
         private static AuctionService AuctionService;
 
         static AuctionController()
         {
-            var repo = new EFMainRepository();
+            repo = new EFMainRepository();
             MemberService = new SimpleMemberService(repo);
             AuctionService = new AuctionService(repo, MemberService);
             AuctionRunner = new AuctionRunner(repo);
@@ -50,24 +51,12 @@ namespace DotNetBay.WebApi
 
         [Route("auctions")]
         [HttpGet]
-        public IHttpActionResult GetAuctions()
+        public IEnumerable<AllAuctionsAuction> GetAuctions()
         {
             List<AllAuctionsAuction> all = new List<AllAuctionsAuction>();
             AuctionService.GetAll().ToList().ForEach(a => all.Add(new AllAuctionsAuction(a)));
 
-            /*
-             * Somehow, when returning IEnumerable<AllAuctionsAuction> and requesting in Google Chrome,
-             * it returns the list as XML which leads to a serializationexception.
-             * In postman, without accept-headers, the result is delivered as json
-             * using Return Json() will ensure that even in Google Chrome the result delivered as Json
-             * which doesn't lead to any exceptions...
-             */
-
-            /*
-             * Adding a default ctor to the AllAuctionsAuction seems to help preventing the exception,
-             * allthough the response contains only empty auction elements
-             */
-            return Json<IEnumerable<AllAuctionsAuction>>(all);
+            return all;
         }
 
         [HttpGet]
